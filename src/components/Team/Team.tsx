@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from '../../theme'
 
+import { Results } from '../Results/Results';
 export interface Props {
     name: string,
     side: string
@@ -22,7 +23,6 @@ const TeamContainer = styled.View`
     border-style: solid;
     flex: 1;
     flex-direction: column;
-    ${props => containerSide[props.side]}
 `;
 
 const TeamName = styled.Text`
@@ -32,8 +32,9 @@ const TeamName = styled.Text`
 `;
 
 const TeamHeader = styled.View`
+    flex-direction: column;
     align-content: ${(props: Props) => props.side === 'left' ? 'flex-start' : 'flex-end'};
-    background-color: green;
+    background-color: grey;
     flex: 1;
 `;
 
@@ -44,6 +45,7 @@ export class Team extends Component<Props> {
             <TeamContainer  >
                 <TeamHeader >
                     <TeamName>{this.props.name}&nbsp; {this.props.side}</TeamName>
+                    <Results ></Results>
                 </TeamHeader>
             </TeamContainer>
         );
