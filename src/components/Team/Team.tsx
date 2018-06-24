@@ -1,53 +1,44 @@
 import React, { Component } from 'react';
 import styled from '../../theme'
 
-import { Results } from '../Results/Results';
+import { Board } from '../Board/Board';
+import { Field } from '../Field/Field';
 export interface Props {
     name: string,
     side: string
 };
 
-const containerSide = {
-    left: `
-    border-right-width: 2;
-    border-right-color: red;
-    `,
-    right: `
-        border-left-color: red;
-        border-left-width: 2;
-    `
-};
-
-const TeamContainer = styled.View`
-    background-color: red;
+const Container = styled.View`
     border-style: solid;
     flex: 1;
     flex-direction: column;
-`;
-
-const TeamName = styled.Text`
-    height: 40;
-    flex-direction: row;
-    color: red;
+    align-content: flex-start;
 `;
 
 const TeamHeader = styled.View`
-    flex-direction: column;
-    align-content: ${(props: Props) => props.side === 'left' ? 'flex-start' : 'flex-end'};
-    background-color: grey;
-    flex: 1;
+    height: 30;
+`;
+
+const TeamName = styled.Text`
+    font-size: 20;
+    flex-direction: row;
+    color: black;
+    background-color: white;
+    text-align: center;
+    text-align-vertical: center;
 `;
 
 export class Team extends Component<Props> {
     render() {
 
         return (
-            <TeamContainer  >
-                <TeamHeader >
-                    <TeamName>{this.props.name}&nbsp; {this.props.side}</TeamName>
-                    <Results ></Results>
+            <Container  >
+                <TeamHeader>
+                    <TeamName>{this.props.name}&nbsp; {this.props.side}</TeamName>  
                 </TeamHeader>
-            </TeamContainer>
+                <Board ></Board>
+                <Field></Field>
+            </Container>
         );
     }
 }

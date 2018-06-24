@@ -1,4 +1,4 @@
-import * as styledComponents from "styled-components";
+import * as styledComponents from 'styled-components';
 
 const {
     default: styled,

@@ -11,13 +11,19 @@ const Container = styled.View`
     background-color: yellow;
 `;
 
+const Divider = styled.View`
+    background-color: #ffffff;
+    width: 5;
+`;
+
 export interface Props { };
 export class Game extends Component<Props> {
     render() {
         return (
             <Container >
-                <Team name='Team Left' side='left' > </Team>
-                <Team name='Team Right' side='right'> </Team>
+                <Team name='Giraffes' side='left' > </Team>
+                <Divider/>
+                <Team name='Foxes' side='right'> </Team>
             </Container>
         );
     }

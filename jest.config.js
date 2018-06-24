@@ -1,6 +1,11 @@
 'use strict';
 
 module.exports = {
+    globals: {
+        'ts-jest': {
+            tsConfigFile: 'tsconfig.json'
+        }
+    },
     preset: 'react-native',
     moduleFileExtensions: [
         'ts',

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import styled from '../../theme'
+import {Text} from 'react-native';
+import styled from '../../theme'; 
 
 export interface Props {
 };
 
-const Board = styled.View`
+const Container = styled.View`
     background-color: orange;
     height: 70;
     align-items: center;
@@ -14,10 +15,12 @@ const Score = styled.View`
     width: 70;
 `
 
-export class Results extends Component<Props> {
+export class Board extends Component<Props> {
     render() {
         return (
-            <Board></Board>
+            <Container>
+                <Text>I am Board</Text>
+            </Container>
         )
     }
 }
