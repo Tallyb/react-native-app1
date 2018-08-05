@@ -37,10 +37,10 @@ android/
 node_modules/
 npm-debug.log
 yarn-error.log
-
+.jest/
 # BUCK
 buck-out/
-\.buckd/
+.buckd/
 *.keystore
 
 # fastlane
